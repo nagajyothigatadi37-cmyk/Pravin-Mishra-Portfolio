@@ -527,8 +527,28 @@ B        Enrollment, cohort dates, and the full curriculum for the DevOps Micro 
         <p>© <span id="year"></span> Pravin Mishra. All rights reserved.</p>
         <p>Crafted with <span>cloud</span> excellence by Pravin Mishra</p>
         
-        <p>Pravin Mishra Portfolio v1.1 - Deployed on 11th October 2026 - By Gatadi Nagajyothi</p>
+<footer>
+  <p>
+    Pravin Mishra Portfolio v1.1 - Deployed on
+    <span id="deployDate"></span>
+    - By Gatadi Nagajyothi
+  </p>
+</footer>
 
+<script>
+  const today = new Date();
+
+  const deployDate = new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Kolkata"
+  }).format(today);
+
+  document.getElementById("deployDate").textContent = deployDate;
+</script>
+
+        
       </div>
     </div>
   </footer>

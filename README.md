@@ -40,3 +40,40 @@ Add this line (example):
 ```
 
 ✅ This proof must be visible in your browser screenshot submission.
+
+
+## Dynamic Portfolio Footer
+
+The portfolio footer displays the version, current date, and author.
+
+Example footer:
+
+Pravin Mishra Portfolio v1.1 - Deployed on 15 Oct 2026 - By Gatadi Nagajyothi
+
+### How the Date Works
+
+The footer contains a `<span id="deployDate"></span>` element.
+JavaScript generates the current date using the browser's Date
+object and formats it as DD Mon YYYY using Intl.DateTimeFormat.
+The Asia/Kolkata time zone is used for consistent display in India.
+
+The date updates automatically whenever the page is loaded.
+This implementation displays the current date rather than storing
+the exact date of the last deployment.
+
+### Code Snippet
+
+```html
+<span id="deployDate"></span>
+
+<script>
+  const today = new Date();
+  document.getElementById("deployDate").textContent =
+    new Intl.DateTimeFormat("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      timeZone: "Asia/Kolkata"
+    }).format(today);
+</script>
+```
